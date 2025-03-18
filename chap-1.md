@@ -100,7 +100,7 @@ Even with complex expressions, the interpreter always operates in the same basic
 ### Naming and the Environment
 A critical aspect of a programming language is the means it provides for using names to refer to computational objects. We say that the name identifies a *variable* whose *value* is the object.
 
-In the Scheme dialect of Lisp, we name things with the ![Make a variable](variable.png) button. Creating a variable <code class=block>(size :: variables)</code> and running <code class=block>set [size V] to [2]</code> causes the interpreter to associate the value 2 with the name size. Once the name size has been associated with the number 2, we can refer to the value 2 by name:
+In the Scheme dialect of Lisp, we name things with the ![Make a variable](variable.png) button (found in the "Variables" category). Creating a variable <code class=block>(size :: variables)</code> and running <code class=block>set [size V] to [2]</code> causes the interpreter to associate the value 2 with the name size. Once the name size has been associated with the number 2, we can refer to the value 2 by name:
 
 <pre class=blocks>
 (size :: variables) //2
