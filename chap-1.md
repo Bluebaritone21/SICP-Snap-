@@ -165,6 +165,7 @@ requires that the evaluation rule be applied to four different combinations. We 
 </pre>
 </details>
 
+
 Next, observe that the repeated application of the first step brings us to the point where we need to evaluate, not combinations, but primitive expressions such as numerals, built-in operators, or other names. We take care of the primitive cases by stipulating that
 
 * the values of numerals are the numbers that they name,
@@ -173,7 +174,7 @@ Next, observe that the repeated application of the first step brings us to the p
 
 We may regard the second rule as a special case of the third one by stipulating that symbols such as <code class=block>(() + () @<:>)</code> and <code class=block>(() * () @<:>)</code> are also included in the global environment, and are associated with the sequences of machine instructions that are their "values." The key point to notice is the role of the environment in determining the meaning of the symbols in expressions. In an interactive language such as Snap<i>!</i>, it is meaningless to speak of the value of an expression such as <code class=block>((x) + (1) $<:>)</code> without specifying any information about the environment that would provide a meaning for the symbol <code class=block>(x)</code> (or even for the symbol <code class=block>(() + () $<:>)</code>). As we shall see in chapter 3, the general notion of the environment as providing a context in which evaluation takes place will play an important role in our understanding of program execution.
 
-Notice that the evaluation rule given above does not handle definitions. For instance, evaluating <code class=block>set [x V] [3]</code> does not apply <code class=block>set [ V] to []</code> to two arguments, one of which is the value of the symbol <code class=block>(x)</code> and the other of which is `3`, since the purpose of the define is precisely to associate <code class=block>(x)</code> with a value. (That is, <code class=block>set [x V] [3]</code> is not a combination.)
+Notice that the evaluation rule given above does not handle definitions. For instance, evaluating <code class=block>set [x V] to [3]</code> does not apply <code class=block>set [ V] to []</code> to two arguments, one of which is the value of the symbol <code class=block>(x)</code> and the other of which is `3`, since the purpose of the define is precisely to associate <code class=block>(x)</code> with a value. (That is, <code class=block>set [x V] to [3]</code> is not a combination.)
 
 [Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
 
