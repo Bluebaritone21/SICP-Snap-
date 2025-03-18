@@ -176,6 +176,13 @@ We may regard the second rule as a special case of the third one by stipulating 
 
 Notice that the evaluation rule given above does not handle definitions. For instance, evaluating <code class=block>set [x V] to [3]</code> does not apply <code class=block>set [ V] to []</code> to two arguments, one of which is the value of the symbol <code class=block>(x)</code> and the other of which is `3`, since the purpose of the define is precisely to associate <code class=block>(x)</code> with a value. (That is, <code class=block>set [x V] to [3]</code> is not a combination.)
 
+Such exceptions to the general evaluation rule are called *special forms*. <code class=block>set [ V] to []</code> is the only example of a special form that we have seen so far, but we will meet others shortly. Each special form has its own evaluation rule. The various kinds of expressions (each with its associated evaluation rule) constitute the syntax of the programming language. In comparison with most other programming languages, Snap<i>!</i> has a very simple syntax; that is, the evaluation rule for expressions can be described by a simple general rule together with specialized rules for a small number of special forms.
+
+### 1.1.4
+### Compound Procedures
+
+
+
 [Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
 
 <script>
