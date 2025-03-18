@@ -133,14 +133,18 @@ One of our goals in this chapter is to isolate issues about thinking procedurall
     1. Evaluate the subexpressions of the combination
     2. Apply the procedure (that is the block) to the arguments that are the values of the other subexpressions (the operands)
 
-<script defer>
+Even this simple rule illustrates some important points about processes in general. First, observe that the first step dictates that in order to accomplish the evaluation process for a combination we must first perform the evaluation process on each element of the combination. Thus, the evaluation rule is *recursive* in nature; that is, it includes, as one of its steps, the need to invoke the rule itself.
+
+[Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
+
+<script>
 snapblocks.renderMatching('pre.blocks', {
   wrap:          true,
   zebraColoring: true,
   showSpaces:    true,
 });
 </script>
-<script defer>
+<script>
 snapblocks.renderMatching('code.block', {
   wrap:          true,
   zebraColoring: true,
