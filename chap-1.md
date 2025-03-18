@@ -206,7 +206,7 @@ report ((x) * (x) $<:>) // multiply it by itself
 
 (Make sure to press `Ok`)
 
-We have here a *compound procedure*, which has been given the name <code class=block>(square [])</code>. The procedure represents the operation of multiplying something by itself. The thing to be multiplied is given a local name, <code class=block>(x)</code>, which plays the same role that a pronoun plays in natural language. Evaluating the definition creates this compound procedure and associates it with the name `square`.
+We have here a *compound procedure*, which has been given the name <code class=block>(square ())</code>. The procedure represents the operation of multiplying something by itself. The thing to be multiplied is given a local name, <code class=block>(x)</code>, which plays the same role that a pronoun plays in natural language. Evaluating the definition creates this compound procedure and associates it with the name `square`.
 
 
 [Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
