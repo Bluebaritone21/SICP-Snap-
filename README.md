@@ -6,4 +6,4 @@
 ### Modified for Snap<i>!</i> by Bluebaritone21
 
 ---
-[Contents](contents)
+[Next: [Contents](contents)]
