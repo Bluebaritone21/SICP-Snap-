@@ -146,7 +146,7 @@ requires that the evaluation rule be applied to four different combinations. We 
 ![A depiction of a tree](tree.svg)
 **Figure 1.1**: Tree representation, showing the value of each subcombination.
 <details>
-<summary>For people how can't render images</summary>
+<summary>For people whose browsers can't render images</summary>
 <pre>
 390
 | <code class=block>(() * () $<:>)</code>
@@ -193,20 +193,20 @@ Now we will learn about *procedure definitions*, a much more powerful abstractio
 We begin by examining how to express the idea of "squaring." We might say, "To square something, multiply it by itself." This is expressed in our language by pressing ![Make a block](block.png) and building the script
 
 <pre class=blocks>
-{(square (x))}::define+
+{(square (x)::operators)}::define+
 report ((x) * (x) $<:>)
 </pre>
 
 We can understand this in the following way:
 
 <pre class=blocks>
-{(square (x))}::define+ // to square something
+{(square (x)::operators)}::define+ // to square something
 report ((x) * (x) $<:>) // multiply it by itself
 </pre>
 
 (Make sure to press `Ok`)
 
-We have here a *compound procedure*, which has been given the name <code class=block>(square ())</code>. The procedure represents the operation of multiplying something by itself. The thing to be multiplied is given a local name, <code class=block>(x)</code>, which plays the same role that a pronoun plays in natural language. Evaluating the definition creates this compound procedure and associates it with the name `square`.
+We have here a *compound procedure*, which has been given the name <code class=block>(square ()::operators)</code>. The procedure represents the operation of multiplying something by itself. The thing to be multiplied is given a local name, <code class=block>(x)</code>, which plays the same role that a pronoun plays in natural language. Evaluating the definition creates this compound procedure and associates it with the name `square`.
 
 
 [Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
