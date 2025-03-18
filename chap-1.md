@@ -66,7 +66,7 @@ Expressions representing numbers may be combined with an expression representing
 ((1000) - (334)) //666
 ((5) * (99) $<:>) //495
 ((10) / (5)) //2
-((2.7) + (10)) //12.7
+((2.7) + (10) $<:>) //12.7
 </pre>
 
 Expressions such as these, formed by delimiting values inside a block, are called combinations. The block is also called the *operator*, and the other elements are called *operands*. The value of a combination is obtained by applying the procedure specified by the operator to the *arguments* that are the values of the operands.
@@ -98,6 +98,31 @@ Even with complex expressions, the interpreter always operates in the same basic
 
 ### 1.1.2
 ### Naming and the Environment
+A critical aspect of a programming language is the means it provides for using names to refer to computational objects. We say that the name identifies a *variable* whose *value* is the object.
+
+In the Scheme dialect of Lisp, we name things with the ![Make a variable](variable.png) button. Creating a variable <code class=blocks>(size)</code> and running <code class=blocks>set [size V] to [2]</code> causes the interpreter to associate the value 2 with the name size. Once the name size has been associated with the number 2, we can refer to the value 2 by name:
+
+<pre class=blocks>
+(size) //2
+((5) * (size) $<:>) // 10
+</pre>
+
+Here are further examples of the use of <code class=blocks>set [ V] to []</code>:
+
+<pre class=blocks>
+set [tau V] to [6.283185]
+
+set [radius V] to [10]
+
+( (0.5) * ((tau) * (radius) $<:>) * (radius) $<:>) // 314.159
+
+set [circumference V] to ((tau) * (radius) $<:>)
+
+(circumference) //62.8318
+</pre>
+![Make a variable](variable.png) and <code class=blocks>set [ V] to []</code> are our language's simplest means of abstraction, for it allows us to use simple names to refer to the results of compound operations, such as the <code class=blocks>(circumference)</code> computed above. In general, computational objects may have very complex structures, and it would be extremely inconvenient to have to remember and repeat their details each time we want to use them. Indeed, complex programs are constructed by building, step by step, computational objects of increasing complexity. The interpreter makes this step-by-step program construction particularly convenient because name-object associations can be created incrementally in successive interactions. This feature encourages the incremental development and testing of programs and is largely responsible for the fact that a Snap<i>!</i> program usually consists of a large number of relatively simple procedures.
+
+It should be clear that the possibility of associating values with symbols and later retrieving them means that the interpreter must maintain some sort of memory that keeps track of the name-object pairs. This memory is called the *environment* (more precisely the *global environment*, since we will see later that a computation may involve a number of different environments).
 
 <script defer>snapblocks.renderMatching('pre.blocks', {
   wrap:          true,              // Optional, defaults to false. This enabled block wrapping
