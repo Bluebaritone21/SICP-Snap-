@@ -124,14 +124,18 @@ set [circumference V] to ((tau) * (radius) $<:>)
 
 It should be clear that the possibility of associating values with symbols and later retrieving them means that the interpreter must maintain some sort of memory that keeps track of the name-object pairs. This memory is called the *environment* (more precisely the *global environment*, since we will see later that a computation may involve a number of different environments).
 
-<script defer>snapblocks.renderMatching('pre.blocks', {
-  wrap:          true,              // Optional, defaults to false. This enabled block wrapping
-  zebraColoring: true,     // Optional, defaults to false. Enabled zebra coloring
-  showSpaces:    true,        // Optional, defaults to false. Shows spaces in inputs
-});</script>
-<script defer>snapblocks.renderMatching('code.block', {
-  wrap:          true,              // Optional, defaults to false. This enabled block wrapping
-  zebraColoring: true,     // Optional, defaults to false. Enabled zebra coloring
-  showSpaces:    true,        // Optional, defaults to false. Shows spaces in inputs
+<script defer>
+snapblocks.renderMatching('pre.blocks', {
+  wrap:          true,
+  zebraColoring: true,
+  showSpaces:    true,
+});
+</script>
+<script defer>
+snapblocks.renderMatching('code.block', {
+  wrap:          true,
+  zebraColoring: true,
+  showSpaces:    true,
   inline:        true,
-});</scripts> 
+});
+</script> 
