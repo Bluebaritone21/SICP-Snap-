@@ -29,7 +29,7 @@ We need an appropriate language for describing processes, and we will use for th
 
 Despite its inception as a mod of Scratch, Snap<i>!</i> is its own language. Modern Snap<i>!</i> was rewritten from the ground up. Snap<i>!</i> is maintained almost exclusively by Jens Mönig, with the cloud storage systems maintained by a small team and paid for by him.  Snap<i>!</i> was designed to provide symbol-manipulating capabilities for attacking programming problems such as the symbolic differentiation and integration of algebraic expressions. It included for this purpose new first-class lists and blocks, which set it apart from most other block-based languages.
 
-If Snap<i>!</i> is not a mainstream language, why are we using it as the framework for our discussion of programming? Because the language possesses unique features that make it an excellent medium for studying important programming constructs and data structures and for relating them to the linguistic features that support them. The most significant of these features is the fact that Snap<i>!</i> descriptions of processes, called procedures, can themselves be represented and manipulated as Snap<i>!</i> data. The importance of this is that there are powerful program-design techniques that rely on the ability to blur the traditional distinction between ''passive'' data and ''active'' processes. As we shall discover, Snap<i>!</i>'s flexibility in handling procedures as data makes it one of the most convenient languages in existence for exploring these techniques. The ability to represent procedures as data also makes Snap<i>!</i> an excellent language for writing programs that must manipulate other programs as data, such as the interpreters and compilers that support computer languages. Above and beyond these considerations, programming in Snap<i>!</i> is great fun.
+If Snap<i>!</i> is not a mainstream language, why are we using it as the framework for our discussion of programming? Because the language possesses unique features that make it an excellent medium for studying important programming constructs and data structures and for relating them to the linguistic features that support them. The most significant of these features is the fact that Snap<i>!</i> descriptions of processes, called procedures, can themselves be represented and manipulated as Snap<i>!</i> data. The importance of this is that there are powerful program-design techniques that rely on the ability to blur the traditional distinction between "passive" data and "active" processes. As we shall discover, Snap<i>!</i>'s flexibility in handling procedures as data makes it one of the most convenient languages in existence for exploring these techniques. The ability to represent procedures as data also makes Snap<i>!</i> an excellent language for writing programs that must manipulate other programs as data, such as the interpreters and compilers that support computer languages. Above and beyond these considerations, programming in Snap<i>!</i> is great fun.
 
 ## 1.1
 ## The Elements of Programming
@@ -41,7 +41,7 @@ A powerful programming language is more than just a means for instructing a comp
 * means of combination, by which compound elements are built from simpler ones, and
 * means of abstraction, by which compound elements can be named and manipulated as units.
 
-In programming, we deal with two kinds of elements: procedures and data. (Later we will discover that they are really not so distinct.) Informally, data is ''stuff'' that we want to manipulate, and procedures are descriptions of the rules for manipulating the data. Thus, any powerful programming language should be able to describe primitive data and primitive procedures and should have methods for combining and abstracting procedures and data.
+In programming, we deal with two kinds of elements: procedures and data. (Later we will discover that they are really not so distinct.) Informally, data is "stuff" that we want to manipulate, and procedures are descriptions of the rules for manipulating the data. Thus, any powerful programming language should be able to describe primitive data and primitive procedures and should have methods for combining and abstracting procedures and data.
 
 In this chapter we will deal only with simple numerical data so that we can focus on the rules for building procedures. In later chapters we will see that these same rules allow us to build procedures to manipulate compound data as well.
 
@@ -100,7 +100,7 @@ Even with complex expressions, the interpreter always operates in the same basic
 ### Naming and the Environment
 A critical aspect of a programming language is the means it provides for using names to refer to computational objects. We say that the name identifies a *variable* whose *value* is the object.
 
-In the Scheme dialect of Lisp, we name things with the ![Make a variable](variable.png) button (found in the "Variables" category). Creating a variable <code class=block>(size :: variables)</code> and running <code class=block>set [size V] to [2]</code> causes the interpreter to associate the value 2 with the name size. Once the name size has been associated with the number 2, we can refer to the value 2 by name:
+In Snap<i>!</i>, we name things with the ![Make a variable](variable.png) button (found in the "Variables" category). Creating a variable <code class=block>(size :: variables)</code> and running <code class=block>set [size V] to [2]</code> causes the interpreter to associate the value 2 with the name size. Once the name size has been associated with the number 2, we can refer to the value 2 by name:
 
 <pre class=blocks>
 (size :: variables) //2
@@ -135,7 +135,45 @@ One of our goals in this chapter is to isolate issues about thinking procedurall
 
 Even this simple rule illustrates some important points about processes in general. First, observe that the first step dictates that in order to accomplish the evaluation process for a combination we must first perform the evaluation process on each element of the combination. Thus, the evaluation rule is *recursive* in nature; that is, it includes, as one of its steps, the need to invoke the rule itself.
 
+Notice how succinctly the idea of recursion can be used to express what, in the case of a deeply nested combination, would otherwise be viewed as a rather complicated process. For example, evaluating
 
+<pre class=blocks>
+(((2) + ((4) * (6) $<:>) $<:>) * ((3) + (5) + (7) $<:>) $<:>)
+</pre>
+
+requires that the evaluation rule be applied to four different combinations. We can obtain a picture of this process by representing the combination in the form of a tree, as shown in figure 1.1. Each combination is represented by a node with branches corresponding to the operator and the operands of the combination stemming from it. The terminal nodes (that is, nodes with no branches stemming from them) represent either operators or numbers. Viewing evaluation in terms of the tree, we can imagine that the values of the operands percolate upward, starting from the terminal nodes and then combining at higher and higher levels. In general, we shall see that recursion is a very powerful technique for dealing with hierarchical, treelike objects. In fact, the "percolate values upward" form of the evaluation rule is an example of a general kind of process known as *tree accumulation*.
+
+![A depiction of a tree](tree.svg)
+**Figure 1.1**: Tree representation, showing the value of each subcombination.
+<details>
+<summary>For people how can't render images</summary>
+<pre>
+390
+| <code class=block>(() * () $<:>)</code>
++ 26
+| | <code class=block>(() + () $<:>)</code>
+| | 2
+| + 24
+| | | <code class=block>(() * () $<:>)</code>
+| | | 4
+| | | 6
++ 15
+| | <code class=block>(() + () $<:>)</code>
+| | 3
+| | 5
+| | 7
+</pre>
+</details>
+
+Next, observe that the repeated application of the first step brings us to the point where we need to evaluate, not combinations, but primitive expressions such as numerals, built-in operators, or other names. We take care of the primitive cases by stipulating that
+
+* the values of numerals are the numbers that they name,
+* the values of built-in operators are the machine instruction sequences that carry out the corresponding operations, and
+* the values of other names are the objects associated with those names in the environment.
+
+We may regard the second rule as a special case of the third one by stipulating that symbols such as <code class=block>(() + () @<:>)</code> and <code class=block>(() * () @<:>)</code> are also included in the global environment, and are associated with the sequences of machine instructions that are their "values." The key point to notice is the role of the environment in determining the meaning of the symbols in expressions. In an interactive language such as Snap<i>!</i>, it is meaningless to speak of the value of an expression such as <code class=block>((x) + (1) $<:>)</code> without specifying any information about the environment that would provide a meaning for the symbol <code class=block>(x)</code> (or even for the symbol <code class=block>(() + () $<:>)</code>). As we shall see in chapter 3, the general notion of the environment as providing a context in which evaluation takes place will play an important role in our understanding of program execution.
+
+Notice that the evaluation rule given above does not handle definitions. For instance, evaluating <code class=block>set [x V] [3]</code> does not apply <code class=block>set [ V] to []</code> to two arguments, one of which is the value of the symbol <code class=block>(x)</code> and the other of which is `3`, since the purpose of the define is precisely to associate <code class=block>(x)</code> with a value. (That is, <code class=block>set [x V] [3]</code> is not a combination.)
 
 [Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
 
