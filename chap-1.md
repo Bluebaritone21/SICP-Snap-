@@ -34,6 +34,38 @@ If Snap<i>!</i> is not a mainstream language, why are we using it as the framewo
 ## 1.1
 ## The Elements of Programming
 
+A powerful programming language is more than just a means for instructing a computer to perform tasks. The language also serves as a framework within which we organize our ideas about processes. Thus, when we describe a language, we should pay particular attention to the means that the language provides for combining simple ideas to form more complex ideas. Every powerful language has three mechanisms for accomplishing this:
+
+
+* primitive expressions, which represent the simplest entities the language is concerned with,
+* means of combination, by which compound elements are built from simpler ones, and
+* means of abstraction, by which compound elements can be named and manipulated as units.
+
+In programming, we deal with two kinds of elements: procedures and data. (Later we will discover that they are really not so distinct.) Informally, data is ''stuff'' that we want to manipulate, and procedures are descriptions of the rules for manipulating the data. Thus, any powerful programming language should be able to describe primitive data and primitive procedures and should have methods for combining and abstracting procedures and data.
+
+In this chapter we will deal only with simple numerical data so that we can focus on the rules for building procedures. In later chapters we will see that these same rules allow us to build procedures to manipulate compound data as well.
+
+### 1.1.1
+### Expressions
+One easy to get started at programming is to examine some typical interactions with Snap<i>!</i>. Imagine that you are sitting at a computer. You drag together an *expression*, and the interpreter responds by displaying the result of its *evaluating* that expression.
+
+One kind of primitive expression you might type is a number. (More precisely, the expression that you type consists of the numerals that represent the number in base 10.) If you present Snap<i>!</i> with a number
+
+<pre class=blocks>
+((486) + () $<:>)
+</pre>
+
+the interpreter will respond by printing
+
+*486*
+
+Expressions representing numbers may be combined with an expression representing a primitive procedure (such as + or *) to form a compound expression that represents the application of the procedure to those numbers. For example:
+
+<pre class=blocks>
+((137) + (349) $<:>) //486
+((1000) - (334)) //666
+</pre>
+
 
 
 <script defer>snapblocks.renderMatching('pre.blocks', {
