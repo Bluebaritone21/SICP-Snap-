@@ -4,7 +4,7 @@
 * [Preface to the Second Edition](pref-2)
 * [Preface to the First Edition](pref-1)
 * [Original Acknowledgments](ack)
-* [Acknowledgments to the Snap<i>!</i> Edition](ack-snap)
+* [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
 
 ---
 * [1 Building Abstractions with Procedures](chap-1)
