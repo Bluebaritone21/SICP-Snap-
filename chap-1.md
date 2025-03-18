@@ -181,6 +181,32 @@ Such exceptions to the general evaluation rule are called *special forms*. <code
 ### 1.1.4
 ### Compound Procedures
 
+We have identified in Lisp some of the elements that must appear in any powerful programming language:
+
+
+* Numbers and arithmetic operations are primitive data and procedures.
+* Nesting of combinations provides a means of combining operations.
+* Definitions that associate names with values provide a limited means of abstraction.
+
+Now we will learn about *procedure definitions*, a much more powerful abstraction technique by which a compound operation can be given a name and then referred to as a unit.
+
+We begin by examining how to express the idea of "squaring." We might say, "To square something, multiply it by itself." This is expressed in our language by pressing ![Make a block](block.png) and building the script
+
+<pre class=blocks>
+{(square (x))}::define+
+report ((x) * (x) $<:>)
+</pre>
+
+We can understand this in the following way:
+
+<pre class=blocks>
+{(square (x))}::define+ // to square something
+report ((x) * (x) $<:>) // multiply it by itself
+</pre>
+
+(Make sure to press `Ok`)
+
+We have here a compound procedure, which has been given the name square. The procedure represents the operation of multiplying something by itself. The thing to be multiplied is given a local name, x, which plays the same role that a pronoun plays in natural language. Evaluating the definition creates this compound procedure and associates it with the name square.
 
 
 [Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
