@@ -100,14 +100,14 @@ Even with complex expressions, the interpreter always operates in the same basic
 ### Naming and the Environment
 A critical aspect of a programming language is the means it provides for using names to refer to computational objects. We say that the name identifies a *variable* whose *value* is the object.
 
-In the Scheme dialect of Lisp, we name things with the ![Make a variable](variable.png) button. Creating a variable <code class=blocks>(size)</code> and running <code class=blocks>set [size V] to [2]</code> causes the interpreter to associate the value 2 with the name size. Once the name size has been associated with the number 2, we can refer to the value 2 by name:
+In the Scheme dialect of Lisp, we name things with the ![Make a variable](variable.png) button. Creating a variable <code class=block>(size :: variables)</code> and running <code class=block>set [size V] to [2]</code> causes the interpreter to associate the value 2 with the name size. Once the name size has been associated with the number 2, we can refer to the value 2 by name:
 
 <pre class=blocks>
-(size) //2
-((5) * (size) $<:>) // 10
+(size :: variables) //2
+((5) * (size :: variables) $<:>) // 10
 </pre>
 
-Here are further examples of the use of <code class=blocks>set [ V] to []</code>:
+Here are further examples of the use of <code class=block>set [ V] to []</code>:
 
 <pre class=blocks>
 set [tau V] to [6.283185]
@@ -120,7 +120,7 @@ set [circumference V] to ((tau) * (radius) $<:>)
 
 (circumference) //62.8318
 </pre>
-![Make a variable](variable.png) and <code class=blocks>set [ V] to []</code> are our language's simplest means of abstraction, for it allows us to use simple names to refer to the results of compound operations, such as the <code class=blocks>(circumference)</code> computed above. In general, computational objects may have very complex structures, and it would be extremely inconvenient to have to remember and repeat their details each time we want to use them. Indeed, complex programs are constructed by building, step by step, computational objects of increasing complexity. The interpreter makes this step-by-step program construction particularly convenient because name-object associations can be created incrementally in successive interactions. This feature encourages the incremental development and testing of programs and is largely responsible for the fact that a Snap<i>!</i> program usually consists of a large number of relatively simple procedures.
+![Make a variable](variable.png) and <code class=block>set [ V] to []</code> are our language's simplest means of abstraction, for it allows us to use simple names to refer to the results of compound operations, such as the <code class=block>(circumference)</code> computed above. In general, computational objects may have very complex structures, and it would be extremely inconvenient to have to remember and repeat their details each time we want to use them. Indeed, complex programs are constructed by building, step by step, computational objects of increasing complexity. The interpreter makes this step-by-step program construction particularly convenient because name-object associations can be created incrementally in successive interactions. This feature encourages the incremental development and testing of programs and is largely responsible for the fact that a Snap<i>!</i> program usually consists of a large number of relatively simple procedures.
 
 It should be clear that the possibility of associating values with symbols and later retrieving them means that the interpreter must maintain some sort of memory that keeps track of the name-object pairs. This memory is called the *environment* (more precisely the *global environment*, since we will see later that a computation may involve a number of different environments).
 
@@ -129,12 +129,9 @@ It should be clear that the possibility of associating values with symbols and l
   zebraColoring: true,     // Optional, defaults to false. Enabled zebra coloring
   showSpaces:    true,        // Optional, defaults to false. Shows spaces in inputs
 });</script>
-<script defer>snapblocks.renderMatching('code.blocks', {
-  style:         'snap',       // Optional, defaults to 'snap'.
-  languages:     ['en'],       // Optional, defaults to ['en'].
-  scale:         1,                // Optional, defaults to 1
+<script defer>snapblocks.renderMatching('code.block', {
   wrap:          true,              // Optional, defaults to false. This enabled block wrapping
   zebraColoring: true,     // Optional, defaults to false. Enabled zebra coloring
   showSpaces:    true,        // Optional, defaults to false. Shows spaces in inputs
-  inline:true,
+  inline:        true,
 });</scripts> 
