@@ -12,5 +12,6 @@
     * [1.1 The Elements of Programming](chap-1#1.1)
         * [1.1.1 Expressions](chap-1#111)
         * [1.1.2 Naming and the Environment](chap-1#112)
+        * [1.1.3 Evaluating Combinations](chap-1#113)
 
 etc.
