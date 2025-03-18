@@ -4,3 +4,6 @@
 ## Second Edition
 ### By Hal Abelson, Jerry Sussman and Julie Sussman
 ### Modified for Snap<i>!</i> by Bluebaritone21
+
+---
+[Contents](contents)
