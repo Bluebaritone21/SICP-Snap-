@@ -27,7 +27,7 @@ Master software engineers have the ability to organize programs so that they can
 ## Programming in Snap<i>!</i>
 We need an appropriate language for describing processes, and we will use for this purpose the programming language [Snap<i>!</i>](http://snap.berkeley.edu/run). Just as our everyday thoughts are usually expressed in our natural language (such as English, French, or Japanese), and descriptions of quantitative phenomena are expressed with mathematical notations, our procedural thoughts will be expressed in Snap<i>!</i>. Snap<i>!</i> was invented around 2008 as a modification of Scratch that added recursion equations, making it more suitable for college students. The language was conceived by Jens Mönig and Brian Harvey, and is documented in Dr. Harvey's paper, ["Why do we Need to Learn this Baby Language?"](https://people.eecs.berkeley.edu/~bh/snap/baby3.pdf) (Harvey 2019)
 
-Despite its inception as a mod of Scratch, Snap<i>!</i> is its own language. Modern Snap<i>!</i> was rewritten from the ground up. Snap<i>!</i> is maintained almost exculsivly by Jens Mönig, with the cloud storage systems maintained by a small team and paid for by him.  Snap<i>!</i> was designed to provide symbol-manipulating capabilities for attacking programming problems such as the symbolic differentiation and integration of algebraic expressions. It included for this purpose new first-class lists and blocks, which set it apart from most other block-based languages.
+Despite its inception as a mod of Scratch, Snap<i>!</i> is its own language. Modern Snap<i>!</i> was rewritten from the ground up. Snap<i>!</i> is maintained almost exclusively by Jens Mönig, with the cloud storage systems maintained by a small team and paid for by him.  Snap<i>!</i> was designed to provide symbol-manipulating capabilities for attacking programming problems such as the symbolic differentiation and integration of algebraic expressions. It included for this purpose new first-class lists and blocks, which set it apart from most other block-based languages.
 
 If Snap<i>!</i> is not a mainstream language, why are we using it as the framework for our discussion of programming? Because the language possesses unique features that make it an excellent medium for studying important programming constructs and data structures and for relating them to the linguistic features that support them. The most significant of these features is the fact that Snap<i>!</i> descriptions of processes, called procedures, can themselves be represented and manipulated as Snap<i>!</i> data. The importance of this is that there are powerful program-design techniques that rely on the ability to blur the traditional distinction between ''passive'' data and ''active'' processes. As we shall discover, Snap<i>!</i>'s flexibility in handling procedures as data makes it one of the most convenient languages in existence for exploring these techniques. The ability to represent procedures as data also makes Snap<i>!</i> an excellent language for writing programs that must manipulate other programs as data, such as the interpreters and compilers that support computer languages. Above and beyond these considerations, programming in Snap<i>!</i> is great fun.
 
@@ -71,7 +71,7 @@ Expressions representing numbers may be combined with an expression representing
 
 Expressions such as these, formed by delimiting values inside a block, are called combinations. The block is also called the *operator*, and the other elements are called *operands*. The value of a combination is obtained by applying the procedure specified by the operator to the *arguments* that are the values of the operands.
 
-The convention of making the operator be represented is very useful partialy becuase it can accommodate procedures that may take an arbitrary number of arguments, as in the following examples:
+The convention of making the operator be represented is very useful partially because it can accommodate procedures that may take an arbitrary number of arguments, as in the following examples:
 
 <pre class=blocks>
 ((21) + (35) + (12) + (7) $<:>) //75
@@ -92,7 +92,7 @@ There is no limit (in principle) to the depth of such nesting and to the overall
 (((3) * (((2) * (4) $<:>) + (3) + (5) $<:>) $<:>) + ((10) - (7)) + (6) $<:>)
 </pre>
 
-which the interpreter would readily evaluate to be 57. Luckally, Snap<i>!</i> uses a feature called *zebra striping*, where blocks alternate between light and dark, to help us keep track of the nesting of blocks.
+which the interpreter would readily evaluate to be 57. Luckily, Snap<i>!</i> uses a feature called *zebra striping*, where blocks alternate between light and dark, to help us keep track of the nesting of blocks.
 
 Even with complex expressions, the interpreter always operates in the same basic cycle: it detects when the user clicks a block, evaluates the expression, and prints the result. This mode of operation is often expressed by saying that the interpreter runs in a *read-eval-print loop*. Observe in particular that it is not necessary to explicitly instruct the interpreter to print the value of the expression.
 
@@ -134,6 +134,8 @@ One of our goals in this chapter is to isolate issues about thinking procedurall
     2. Apply the procedure (that is the block) to the arguments that are the values of the other subexpressions (the operands)
 
 Even this simple rule illustrates some important points about processes in general. First, observe that the first step dictates that in order to accomplish the evaluation process for a combination we must first perform the evaluation process on each element of the combination. Thus, the evaluation rule is *recursive* in nature; that is, it includes, as one of its steps, the need to invoke the rule itself.
+
+
 
 [Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
 
