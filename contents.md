@@ -11,5 +11,6 @@
 * [1 Building Abstractions with Procedures](chap-1)
     * [1.1 The Elements of Programming](chap-1#1.1)
         * [1.1.1 Expressions](chap-1#1.1.1)
+        * [1.1.2 Naming and the Environment](chap-1#1.1.2)
 
 etc.

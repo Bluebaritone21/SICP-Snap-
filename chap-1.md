@@ -64,9 +64,40 @@ Expressions representing numbers may be combined with an expression representing
 <pre class=blocks>
 ((137) + (349) $<:>) //486
 ((1000) - (334)) //666
+((5) * (99) $<:>) //495
+((10) / (5)) //2
+((2.7) + (10)) //12.7
 </pre>
 
+Expressions such as these, formed by delimiting values inside a block, are called combinations. The block is also called the *operator*, and the other elements are called *operands*. The value of a combination is obtained by applying the procedure specified by the operator to the *arguments* that are the values of the operands.
 
+The convention of making the operator be represented is very useful partialy becuase it can accommodate procedures that may take an arbitrary number of arguments, as in the following examples:
+
+<pre class=blocks>
+((21) + (35) + (12) + (7) $<:>) //75
+
+((25) * (4) * (12) $<:>) //1200
+</pre>
+No ambiguity can arise, because the operator is always the outermost block. (You can obtain these multi-input variants by clicking the little arrows on the right edge of the block)
+
+A second advantage of of this notation is that it extends in a straightforward way to allow combinations to be nested, that is, to have combinations whose elements are themselves combinations:
+
+<pre class=blocks>
+(((3) * (5) $<:>) + ((10) - (6)) $<:>) //19
+</pre>
+
+There is no limit (in principle) to the depth of such nesting and to the overall complexity of the expressions that the Snap<i>!</i> interpreter can evaluate. It is we humans who get confused by still relatively simple expressions such as
+
+<pre class=blocks>
+(((3) * (((2) * (4) $<:>) + (3) + (5) $<:>) $<:>) + ((10) - (7)) + (6) $<:>)
+</pre>
+
+which the interpreter would readily evaluate to be 57. Luckally, Snap<i>!</i> uses a feature called *zebra striping*, where blocks alternate between light and dark, to help us keep track of the nesting of blocks.
+
+Even with complex expressions, the interpreter always operates in the same basic cycle: it detects when the user clicks a block, evaluates the expression, and prints the result. This mode of operation is often expressed by saying that the interpreter runs in a *read-eval-print loop*. Observe in particular that it is not necessary to explicitly instruct the interpreter to print the value of the expression.
+
+### 1.1.2
+### Naming and the Environment
 
 <script defer>snapblocks.renderMatching('pre.blocks', {
   wrap:          true,              // Optional, defaults to false. This enabled block wrapping
