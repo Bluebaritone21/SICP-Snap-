@@ -20,4 +20,4 @@ In teaching our material we use a dialect of the programming language Lisp. We n
 
 Scheme, the dialect of Lisp that we use, is an attempt to bring together the power and elegance of Lisp and Algol. From Lisp we take the metalinguistic power that derives from the simple syntax, the uniform representation of programs as data objects, and the garbage-collected heap-allocated data. From Algol we take lexical scoping and block structure, which are gifts from the pioneers of programming-language design who were on the Algol committee. We wish to cite John Reynolds and Peter Landin for their insights into the relationship of Church's lambda calculus to the structure of programming languages. We also recognize our debt to the mathematicians who scouted out this territory decades before computers appeared on the scene. These pioneers include Alonzo Church, Barkley Rosser, Stephen Kleene, and Haskell Curry.
 
-[[Contents](contents) | Previous: [Preface to the Second Edition](pref-2) | Next: [Original Acknowledgments](ack)]
+[Contents](contents) | Previous: [Preface to the Second Edition](pref-2) | Next: [Original Acknowledgments](ack)

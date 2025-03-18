@@ -17,4 +17,4 @@ The first edition of the book closely followed the syllabus of our MIT one-semes
 
 The World-Wide-Web site mitpress.mit.edu/sicp provides support for users of this book. This includes programs from the book, sample programming assignments, supplementary materials, and downloadable implementations of the Scheme dialect of Lisp.
 
-[[Contents](contents) | Previous: [Forward](forward) | Next: [Preface to the First Edition](pref-1)]
+[Contents](contents) | Previous: [Forward](forward) | Next: [Preface to the First Edition](pref-1)

@@ -1,5 +1,6 @@
 # Contents
 
+* [Cover](.)
 * [Forward](forward)
 * [Preface to the Second Edition](pref-2)
 * [Preface to the First Edition](pref-1)

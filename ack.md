@@ -32,4 +32,4 @@ We appreciate the work of those who contributed to making this a real book, espe
 
 Finally, we would like to acknowledge the support of the organizations that have encouraged this work over the years, including support from Hewlett-Packard, made possible by Ira Goldstein and Joel Birnbaum, and support from DARPA, made possible by Bob Kahn.
 
-[[Contents](contents) | Previous: [Preface to the First Edition](pref-1) | Next: [Acknowledgements of the Snap<i>!</i> Edition](ack-snap)]
+[Contents](contents) | Previous: [Preface to the First Edition](pref-1) | Next: [Acknowledgements of the Snap<i>!</i> Edition](ack-snap)
