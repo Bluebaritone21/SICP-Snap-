@@ -26,3 +26,5 @@ As one would expect from its goals, artificial intelligence research generates m
 
 Alan J. Perlis
 New Haven, Connecticut
+
+[[Contents](contents) | Next: [Preface to the Second Edition](pref-2)]

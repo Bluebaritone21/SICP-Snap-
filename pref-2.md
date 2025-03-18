@@ -1,4 +1,4 @@
-# Prefrence to the Second Edition
+# Preface to the Second Edition
 
 
 > Is it possible that software is not like anything else, that it is meant to be discarded: 
@@ -16,3 +16,5 @@ This edition emphasizes several new themes. The most important of these is the c
 The first edition of the book closely followed the syllabus of our MIT one-semester subject. With all the new material in the second edition, it will not be possible to cover everything in a single semester, so the instructor will have to pick and choose. In our own teaching, we sometimes skip the section on logic programming (section 4.4), we have students use the register-machine simulator but we do not cover its implementation (section 5.2), and we give only a cursory overview of the compiler (section 5.5). Even so, this is still an intense course. Some instructors may wish to cover only the first three or four chapters, leaving the other material for subsequent courses.
 
 The World-Wide-Web site mitpress.mit.edu/sicp provides support for users of this book. This includes programs from the book, sample programming assignments, supplementary materials, and downloadable implementations of the Scheme dialect of Lisp.
+
+[[Contents](contents) | Previous: [Forward](forward) | Next: [Preface to the First Edition](pref-1)]
