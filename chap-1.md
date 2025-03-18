@@ -49,4 +49,4 @@ If Snap<i>!</i> is not a mainstream language, why are we using it as the framewo
   zebraColoring: true,     // Optional, defaults to false. Enabled zebra coloring
   showSpaces:    true,        // Optional, defaults to false. Shows spaces in inputs
   inline:true,
-});</scripts>
+});</scripts> 
