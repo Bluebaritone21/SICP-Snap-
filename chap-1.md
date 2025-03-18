@@ -124,6 +124,15 @@ set [circumference V] to ((tau) * (radius) $<:>)
 
 It should be clear that the possibility of associating values with symbols and later retrieving them means that the interpreter must maintain some sort of memory that keeps track of the name-object pairs. This memory is called the *environment* (more precisely the *global environment*, since we will see later that a computation may involve a number of different environments).
 
+### 1.1.3
+### Evaluating Combinations
+
+One of our goals in this chapter is to isolate issues about thinking procedurally. As a case in point, let us consider that, in evaluating combinations, the interpreter is itself following a procedure.
+
+* To evaluate a combination, do the following:
+    1. Evaluate the subexpressions of the combination
+    2. Apply the procedure (that is the block) to the arguments that are the values of the other subexpressions (the operands)
+
 <script defer>
 snapblocks.renderMatching('pre.blocks', {
   wrap:          true,
