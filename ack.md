@@ -28,8 +28,12 @@ Beyond the MIT implementation, we would like to thank the many people who worked
 
 Dan Friedman has been a long-time leader of the Scheme community. The community's broader work goes beyond issues of language design to encompass significant educational innovations, such as the high-school curriculum based on EdScheme by Schemer's Inc., and the wonderful books by Mike Eisenberg and by Brian Harvey and Matthew Wright.
 
-We appreciate the work of those who contributed to making this a real book, especially Terry Ehling, Larry Cohen, and Paul Bethge at the MIT Press. Ella Mazel found the wonderful cover image. For the second edition we are particularly grateful to Bernard and Ella Mazel for help with the book design, and to David Jones, TEX wizard extraordinaire. We also are indebted to those readers who made penetrating comments on the new draft: Jacob Katzenelson, Hardy Mayer, Jim Miller, and especially Brian Harvey, who did unto this book as Julie did unto his book Simply Scheme.
+We appreciate the work of those who contributed to making this a real book, especially Terry Ehling, Larry Cohen, and Paul Bethge at the MIT Press. Ella Mazel found the wonderful cover image. For the second edition we are particularly grateful to Bernard and Ella Mazel for help with the book design, and to David Jones, TEX wizard extraordinaire. We also are indebted to those readers who made penetrating comments on the new draft: Jacob Katzenelson, Hardy Mayer, Jim Miller, and especially *Brian Harvey*, who did unto this book as Julie did unto his book Simply Scheme.
 
 Finally, we would like to acknowledge the support of the organizations that have encouraged this work over the years, including support from Hewlett-Packard, made possible by Ira Goldstein and Joel Birnbaum, and support from DARPA, made possible by Bob Kahn.
 
-[Contents](contents) | Previous: [Preface to the First Edition](pref-1) | Next: [Acknowledgements of the Snap<i>!</i> Edition](ack-snap)
+---
+
+Bluebaritone21 would like to thank Jens Mönig for creating Snap<i>!</i> ands Brian Harvey for introducing me to SICP.
+
+[Contents](contents) | Previous: [Preface to the First Edition](pref-1) | Next: [Chapter 1: Building Abstractions with Procedures](chap-1)

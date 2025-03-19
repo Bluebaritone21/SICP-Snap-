@@ -211,14 +211,44 @@ We have here a *compound procedure*, which has been given the name <code class=b
 The general form of a procedure definition is
 
 <pre class=blocks>
-{(&lt;label&gt; [&lt;parameter&gt;] ... )}::define+
-report (&lt;body&gt;)
+{(&lt;​label​&gt; [&lt;parameter&gt;] ... )}::define
+report (&lt;​body​&gt;)
 </pre>
 
-The *&lt;name&gt;* is a symbol to be associated with the procedure definition in the environment. The *&lt;formal parameters&gt;* are the names used within the body of the procedure to refer to the corresponding arguments of the procedure. The *&lt;body&gt;* is an expression that will yield the value of the procedure application when the formal parameters are replaced by the actual arguments to which the procedure is applied. The *&lt;name&gt;* and the *&lt;formal parameters&gt;* are displayed in a block, just as they would be in an actual call to the procedure being defined.
+The *&lt;label&gt;* is a symbol to be associated with the procedure definition in the environment. The *&lt;formal parameters&gt;* are the names used within the body of the procedure to refer to the corresponding arguments of the procedure. The *&lt;body&gt;* is an expression that will yield the value of the procedure application when the formal parameters are replaced by the actual arguments to which the procedure is applied. The *&lt;label&gt;* and the *&lt;formal parameters&gt;* are displayed in a block, just as they would be in an actual call to the procedure being defined.
 
-[Contents](contents) | Previous: [Acknowledgments of the Snap<i>!</i> Edition](ack-snap)
+Having defined <code class=block>(square ()::operators)</code>, we can now use it:
 
+<pre class=blocks>
+(square (21)::operators) //441
+(square ((2) + (5) $<:>)::operators) //49
+(square (square (3)::operators)::operators) //81
+</pre>
+
+We can also use square as a building block in defining other procedures. For example, $x^{2} + y^{2}$ can be expressed as <code class=block>((square (x)::operators) + (square (y)::operators) $<:>)</code>. We can easily define a procedure <code class=block>(sum-of-squares () ()::operators)</code> that, given any two numbers as arguments, produces the sum of their squares:
+
+<pre class=blocks>
+{(sum-of-squares (x) (y)::operators)}::define+
+report ((square (x)::operator) + (square (y)::operator) $<:>)
+</pre>
+
+Now we can use <code class=block>(sum-of-squares () ()::operators)</code> as a building block in constructing further procedures
+
+<pre class=blocks>
+{(f (a))}::define+
+report (sum-of-squares ((a) + (1) $<:>) ((a) * (2) $<:>))
+
+(f (5)) //136
+</pre>
+
+Compound procedures are used in exactly the same way as primitive procedures. Indeed, one could not tell by looking at the definition of `sum-of-squares` given above whether square was built into the interpreter, like `+` and `*`, or defined as a compound procedure.
+
+### 1.1.5
+### The Substitution Model for Procedure Application
+
+
+
+[Contents](contents) | Previous: [Acknowledgments](ack)
 <script>
 snapblocks.renderMatching('pre.blocks', {
   wrap:          true,
