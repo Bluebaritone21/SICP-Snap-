@@ -1,7 +1,6 @@
 # Chapter 1
 # Building Abstractions with Procedures
 <script src="snapblocks.min.js"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
 
