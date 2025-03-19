@@ -212,7 +212,7 @@ The general form of a procedure definition is
 
 <pre class=blocks>
 {(&lt;label&gt; [&lt;parameter&gt;] ... )}::define+
-report (<body>)
+report (&lt;body&gt;)
 </pre>
 
 The *&lt;name&gt;* is a symbol to be associated with the procedure definition in the environment. The *&lt;formal parameters&gt;* are the names used within the body of the procedure to refer to the corresponding arguments of the procedure. The *&lt;body&gt;* is an expression that will yield the value of the procedure application when the formal parameters are replaced by the actual arguments to which the procedure is applied. The *&lt;name&gt;* and the *&lt;formal parameters&gt;* are displayed in a block, just as they would be in an actual call to the procedure being defined.
